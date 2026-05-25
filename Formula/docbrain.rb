@@ -1,22 +1,22 @@
 class Docbrain < Formula
   desc "AI-powered documentation intelligence CLI"
   homepage "https://github.com/docbrain-ai/docbrain"
-  version "1.4.13"
+  version "1.4.15"
   license "BSL-1.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/docbrain-ai/docbrain/releases/download/v1.4.13/docbrain-darwin-arm64"
-      sha256 "9c03b0668b42ea1c84df16704780a56c2d6f14416da8573e3df33830c6f30649"
+      url "https://github.com/docbrain-ai/docbrain/releases/download/v1.4.15/docbrain-darwin-arm64"
+      sha256 "bc51cee375233649c2e6ff2fdd92cfbb1ffb11256e69a6ac0225333752b5eda1"
     else
-      url "https://github.com/docbrain-ai/docbrain/releases/download/v1.4.13/docbrain-darwin-amd64"
-      sha256 "afacb957b5d214d45fb9f73a6f3cc36bae6519ac8adbb39253af3ac810645d7c"
+      url "https://github.com/docbrain-ai/docbrain/releases/download/v1.4.15/docbrain-darwin-amd64"
+      sha256 "6f4c93fbae5e5badc64b5c40521e56fbfc8a249c38aedce299894ccb63c12d9a"
     end
   end
 
   on_linux do
-    url "https://github.com/docbrain-ai/docbrain/releases/download/v1.4.13/docbrain-linux-amd64"
-    sha256 "74c5c3bb61f13723cbf896ca1b24f22a8a841d6f79f46cafc50a200eb3268a33"
+    url "https://github.com/docbrain-ai/docbrain/releases/download/v1.4.15/docbrain-linux-amd64"
+    sha256 "7b34fc681e23a2131dfd22878a95bb992b1f5fde728a90af3c3c02146cd37dc3"
   end
 
   def install
