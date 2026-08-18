@@ -1,22 +1,33 @@
 class Docbrain < Formula
   desc "AI-powered documentation intelligence CLI"
   homepage "https://github.com/docbrain-ai/docbrain"
-  version "1.5.12"
+  version "1.5.13"
   license "BSL-1.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/docbrain-ai/docbrain/releases/download/v1.5.12/docbrain-darwin-arm64"
-      sha256 "7d5e56389d7fbac2ba532f2d64b1b1c9f2496e9a0558e9a4b4887bdb7835fb7a"
+      url "https://github.com/docbrain-ai/docbrain/releases/download/v1.5.13/docbrain-darwin-arm64"
+      sha256 "3c8f02194d9307534c4fc5ab518b91dd51ac4d4ca7e8c28ddb5852703da3fdb9"
     else
-      url "https://github.com/docbrain-ai/docbrain/releases/download/v1.5.12/docbrain-darwin-amd64"
-      sha256 "b126338ec32d287d29c28d47d74f060d51844a1e5ddb746770325e37c1aec152"
+      url "https://github.com/docbrain-ai/docbrain/releases/download/v1.5.13/docbrain-darwin-amd64"
+      sha256 "a7d9c15457737edbbc41c3358d91f1bdc9b8c3e5a84535e96f921c9dae47e474"
     end
   end
 
   on_linux do
-    url "https://github.com/docbrain-ai/docbrain/releases/download/v1.5.12/docbrain-linux-amd64"
-    sha256 "5f13d57ae97ba2a958aa37442d4a4cb3048ce4bc9e22039904ec2773ea2d6aef"
+    # This job publishes no linux-arm64 binary. docbrain-cli reaches TLS
+    # through reqwest's default native-tls, which is OpenSSL on Linux, and
+    # cross-compiling that to aarch64 needs an arm64 sysroot the hosted
+    # runners do not have.
+    #
+    # Stating that as depends_on rather than leaving on_linux
+    # unconditional: previously an arm64 Linux host was handed the x86_64
+    # binary, installed it happily, and then failed at exec with a message
+    # that says nothing about architecture. brew's own unsupported-arch
+    # error is the honest answer until the binary exists.
+    depends_on arch: :x86_64
+    url "https://github.com/docbrain-ai/docbrain/releases/download/v1.5.13/docbrain-linux-amd64"
+    sha256 "19682a9ef8ca8cd12247ea739fdae60a5d3087d05c3c563d4b0781007007440c"
   end
 
   def install
