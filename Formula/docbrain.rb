@@ -1,16 +1,16 @@
 class Docbrain < Formula
   desc "AI-powered documentation intelligence CLI"
   homepage "https://github.com/docbrain-ai/docbrain"
-  version "1.5.21"
+  version "1.5.22"
   license "BSL-1.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/docbrain-ai/docbrain/releases/download/v1.5.21/docbrain-darwin-arm64"
-      sha256 "af5037bb01e23b8ee43a1fc755df3d6f6bdcd501c5e1742cdd4444f13fbacf76"
+      url "https://github.com/docbrain-ai/docbrain/releases/download/v1.5.22/docbrain-darwin-arm64"
+      sha256 "f6a4ea4ab5a739548d884d59d4ddf3635616e162e28a01dd3bf3523cb8419f65"
     else
-      url "https://github.com/docbrain-ai/docbrain/releases/download/v1.5.21/docbrain-darwin-amd64"
-      sha256 "96d908844aa7ffc92188233c821fd8a597ccec39e3f1cdd814c06942610f2a3c"
+      url "https://github.com/docbrain-ai/docbrain/releases/download/v1.5.22/docbrain-darwin-amd64"
+      sha256 "570ccc6ddb94437833b8c0109d85ebd42b6099de4cee603c0ea116b2369a927f"
     end
   end
 
@@ -26,8 +26,8 @@ class Docbrain < Formula
     # that says nothing about architecture. brew's own unsupported-arch
     # error is the honest answer until the binary exists.
     depends_on arch: :x86_64
-    url "https://github.com/docbrain-ai/docbrain/releases/download/v1.5.21/docbrain-linux-amd64"
-    sha256 "afe96a2adf4eca6cf1425eac368369a7c6d770141f6c6137e6c33f450be7688e"
+    url "https://github.com/docbrain-ai/docbrain/releases/download/v1.5.22/docbrain-linux-amd64"
+    sha256 "c8ce9554dd03b14bca519bf4b4a02ce3abb15c36be9d1d64b815557279243268"
   end
 
   def install
